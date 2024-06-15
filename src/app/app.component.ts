@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TotalCountServiceService } from './total-count-service.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'hospital2';
+  constructor(private _totalCount: TotalCountServiceService) {
+  }
+  number = this._totalCount.getTotal();
 }
